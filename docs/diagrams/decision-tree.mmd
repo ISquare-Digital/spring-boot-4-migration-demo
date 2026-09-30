@@ -1,0 +1,10 @@
+flowchart TD
+    A[Service en Spring Boot 3.x] --> B{Dépendance bloquante ?<br/>Undertow, Spock, Jersey + Jackson,<br/>lib interne non compatible}
+    B -- Oui --> C{Budget pour le<br/>support commercial ?}
+    C -- Oui --> D[Rester en 3.5<br/>support commercial<br/>+ plan de sortie daté]
+    C -- Non --> E[Lever le blocage d'abord<br/>puis migrer]
+    B -- Non --> F{Java 17+ en prod ?}
+    F -- Non --> G[Monter Java d'abord<br/>idéalement 25 LTS]
+    F -- Oui --> H[Migrer directement vers 4.1]
+    E --> H
+    G --> H

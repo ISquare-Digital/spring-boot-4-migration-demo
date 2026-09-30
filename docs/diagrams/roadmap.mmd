@@ -1,0 +1,10 @@
+flowchart TB
+    subgraph P1[Préparer et automatiser]
+      direction LR
+      S0[0 · Préparer<br/>dernière 3.5.x] --> S1[1 · OpenRewrite] --> S2[2 · Starters] --> S3[3 · Jackson 3]
+    end
+    subgraph P2[Corriger, tester, finir]
+      direction LR
+      S4[4 · Propriétés] --> S5[5 · Tests] --> S6[6 · Sécurité, données,<br/>messaging, web] --> S7[4.0 → 4.1]
+    end
+    P1 --> P2
